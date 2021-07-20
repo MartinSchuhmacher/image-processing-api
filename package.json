@@ -1,0 +1,29 @@
+{
+    "name": "image-processing-api",
+    "version": "1.0.0",
+    "description": "Image processing API using TypeScript",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prettier": "npx prettier --config .prettierrc.json --write",
+        "eslint": "eslint src/*.ts"
+    },
+    "keywords": [
+        "typescript",
+        "eslint",
+        "prettier",
+        "api"
+    ],
+    "author": "Martin Schuhmacher",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.28.4",
+        "@typescript-eslint/parser": "^4.28.4",
+        "eslint": "^7.31.0",
+        "jasmine": "^3.8.0",
+        "prettier": "^2.3.2",
+        "typescript": "^4.3.5"
+    }
+}
