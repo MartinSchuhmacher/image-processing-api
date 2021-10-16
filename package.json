@@ -5,9 +5,10 @@
    "scripts": {
       "build": "rm -rf dist && tsc -p .tsconfig.json",
       "eslint": "eslint '*/**/*.{js,ts}'",
+      "jasmine": "jasmine",
       "prettier": "prettier --find-config-path --check .",
       "start": "node dist/index.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "npm run build && npm run jasmine"
    },
    "keywords": [
       "typescript",
