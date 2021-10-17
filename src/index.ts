@@ -7,7 +7,7 @@ const port = 8081;
 
 app.listen(port, (): void => {
    // check for thumbnail folder
-   const thumbnailPath: string = path.resolve(__dirname, '../assets/thumbnail');
+   const thumbnailPath: string = path.resolve(__dirname, '../../assets/thumbnail');
 
    // create synchronous if not existent
    if (!fs.existsSync(thumbnailPath)) {

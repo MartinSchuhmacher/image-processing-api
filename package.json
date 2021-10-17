@@ -7,7 +7,7 @@
       "eslint": "eslint '*/**/*.{js,ts}'",
       "jasmine": "jasmine",
       "prettier": "prettier --find-config-path --check .",
-      "start": "node dist/index.js",
+      "start": "node dist/src/index.js",
       "test": "npm run build && npm run jasmine"
    },
    "keywords": [
