@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import fs from 'fs/promises';
 import path from 'path';
 import { Stats } from 'fs';
+import resizeImageHelper from '../../helpers/imageResize';
 
 const imageRouter = express.Router();
 
@@ -35,7 +36,6 @@ imageRouter.get('/', async (req: Request, res: Response): Promise<void> => {
    }
 
    // check if the requested thumbnail already exists
-
    const existingThumbnail: Stats | null = await fs.stat(thumbnailImagePath).catch(() => {
       return null;
    });
@@ -49,6 +49,12 @@ imageRouter.get('/', async (req: Request, res: Response): Promise<void> => {
          });
    } else {
       // resize the requested image
+      resizeImageHelper
+         .resizeImage({ fullImagePath, thumbnailImagePath, width, height })
+         .then((resizedImage: Buffer) => res.status(200).contentType('jpg').send(resizedImage))
+         .catch(() => {
+            res.status(500).send('something went wrong during resizing the requested image');
+         });
    }
 });
 
