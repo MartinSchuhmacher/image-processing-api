@@ -4,8 +4,8 @@ import sharp from 'sharp';
 interface ResizeImageProps {
    fullImagePath: string;
    thumbnailImagePath: string;
-   width: number | null;
-   height: number | null;
+   width: number;
+   height: number;
 }
 
 /* resize a given fullImage from the path and save as a thumbnail to the given thumbnailImagePath

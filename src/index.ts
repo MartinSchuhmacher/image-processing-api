@@ -8,9 +8,13 @@ const port = 8081;
 
 app.use('/api', routes);
 
+app.get('/', (_, res: Response): void => {
+   res.status(200).send('server is working fine!');
+});
+
 app.listen(port, (): void => {
    // check for thumbnail folder
-   const thumbnailPath: string = path.resolve(__dirname, '../../assets/thumbnail');
+   const thumbnailPath: string = path.resolve(__dirname, '../assets/thumbnail');
 
    // create synchronous if not existent
    if (!fs.existsSync(thumbnailPath)) {
@@ -18,10 +22,6 @@ app.listen(port, (): void => {
    }
 
    console.log(`Server running smoothly on port ${port}!`);
-});
-
-app.get('/', (_, res: Response): void => {
-   res.sendStatus(200);
 });
 
 export default app;

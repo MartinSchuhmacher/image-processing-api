@@ -1,8 +1,8 @@
 import path from 'path';
-import imageHelper from '../../src/helpers/imageResize';
+import imageHelper from '../../helpers/imageResize';
 
-const fullImagePath = path.resolve(__dirname, '../../assets/full/fox.jpg');
-const thumbnailImagePath = path.resolve(__dirname, '../../assets/thumbnail/fox.jpg');
+const fullImagePath = path.resolve(__dirname, '../../../assets/full/fox.jpg');
+const thumbnailImagePath = path.resolve(__dirname, '../../../assets/thumbnail/fox.jpg');
 
 describe('imageResize function', (): void => {
    it('returns a buffer after successfully resizing the image', async () => {

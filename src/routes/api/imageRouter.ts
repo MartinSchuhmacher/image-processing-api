@@ -14,6 +14,7 @@ imageRouter.get('/', async (req: Request, res: Response): Promise<void> => {
    //check for correct query syntax with above results
    if (!fileName || !height || !width) {
       res.status(400).send('Please place a correct url with the necessary filename, height and width parameters');
+      return;
    }
 
    // fetch path to full image for fileName
@@ -22,7 +23,7 @@ imageRouter.get('/', async (req: Request, res: Response): Promise<void> => {
    // fetch path to thumbnail image for fileName in ${filename}-${height}x${width} format
    const thumbnailImagePath = `${path.resolve(
       __dirname,
-      `../../../full/thumbnail/${fileName}-${height}x${width}.jpg`,
+      `../../../assets/thumbnail/${fileName}-${height}x${width}.jpg`,
    )}`;
 
    // check if fullimage exists for requested fileName
